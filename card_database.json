@@ -1,0 +1,18 @@
+{"wolf":
+	{"cost":1,
+	"effects":[],
+	"atk":1,
+	"def":1},
+
+"turtle":
+	{"cost":1,
+	"effects":[],
+	"atk":0,
+	"def":2},
+
+"pidgeon":
+	{"cost":2,
+	"effects":["fly"],
+	"atk":1,
+	"def":1}
+}
