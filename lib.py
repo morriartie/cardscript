@@ -29,8 +29,9 @@ class Hand():
 
 class Deck():
     deck_list = []
-    def __init__(self, owner, cards=[]):
+    def __init__(self, name, owner=None, cards=[]):
         Deck.deck_list.append(self)
+        self.name = name.title()
         self.cards = cards
         self.discard = []
         self.owner = owner
