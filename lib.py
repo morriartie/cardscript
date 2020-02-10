@@ -4,6 +4,12 @@ class Table():
     def __init__(self, deck1, deck2):
         self.deck1 = deck1
         self.deck2 = deck2
+        #
+        self.deck1_field = []
+        self.deck2_field = []
+        #
+        self.deck1_hp = 10
+        self.deck2_hp = 10
         self.current_turn = 0
 
         
