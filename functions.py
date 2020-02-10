@@ -33,6 +33,7 @@ def load_decks(filename):
                 print(f"----  inserted: {c.name} x{amount}")
             else:
                 print(f"---- not found: {cardname}")
+        print(f"cards: {[str(v) for v in d.cards]}")
 
 
 

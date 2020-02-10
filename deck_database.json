@@ -3,6 +3,9 @@
     "wolf":12,
     "turtle":10},
  
+"goblin":
+     {"goblin":25},
+ 
 "errordeck":
      {"pidgeon":15,
       "missingno":10}

@@ -9,7 +9,13 @@
 	"effects":[],
 	"atk":0,
 	"def":2},
-
+ 
+"goblin":
+     {"cost":2,
+     "effects":["fast"],
+     "atk":1,
+     "def":1},
+ 
 "pidgeon":
 	{"cost":2,
 	"effects":["fly"],
