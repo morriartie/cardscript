@@ -6,6 +6,8 @@ class Table():
         self.deck2 = deck2
         self.current_turn = 0
 
+        
+
 
 class Card():
     card_list = []
@@ -21,23 +23,29 @@ class Card():
     def __str__(self):
         icons = ''
         if 'fast' in self.effects:
-            icons += '='
+            icons += '>'
         if 'fly' in self.effects:
-            icons += '&'
+            icons += '^'
         if 'strong' in self.effects:
             icons += '*'
         return f"{self.name.title()}({icons})[{self.atk}/{self.defense}]"
 
 
 class Hand():
-    def __init__(self, owner, deck=None):
+    def __init__(self, deck):
         self.cards = []
-        self.owner = owner
-        self.deck = None
+        self.deck = deck
+
+    def __str__(self):
+        return '\n'.join([str(c) for c in self.cards])
+
+    def __int__(self):
+        return len(self.cards)
 
     def buy(self):
-        c = self.deck.buy()
-        self.cards.append(c)
+        cards = self.deck.buy()
+        for c in cards:
+            self.cards.append(c)
 
     def add_card(self, card):
         self.cards.append(card)
@@ -50,12 +58,15 @@ class Deck():
         self.name = name.title()
         self.cards = []
         self.discard = []
-        self.hand = hand
+        self.hand = Hand(self)
+
+    def __int__(self):
+        return len(self.cards)
 
     def add_card(self,card):
         self.cards.append(card)
 
-    def buy(self, n):
+    def buy(self, n=1):
         bought = self.cards[-n:]
         self.cards = self.cards[:-n]
         return bought
