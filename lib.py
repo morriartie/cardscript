@@ -49,8 +49,8 @@ class Hand():
     def __int__(self):
         return len(self.cards)
 
-    def buy(self):
-        cards = self.deck.buy()
+    def buy(self, n=1):
+        cards = self.deck.buy(n)
         for c in cards:
             self.cards.append(c)
 
@@ -92,9 +92,12 @@ class Deck():
 
     def play_card(self, c_index=None):
         if not c_index:
-            for i,card in enumerate(self.hand.cards):
+            for i,card in enumerate(self.hand.cards+['None']):
                 print(f"{i}: {card}")
             c_index = int(input(">> "))
+        if c_index == len(self.hand.cards):
+            print("Passing")
+            return
         self.field.append(self.hand.cards[c_index])
         print(f"playing {self.hand.cards[c_index]}")
         self.hand.cards = [c for i,c in enumerate(self.hand.cards) if i!=c_index]
